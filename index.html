@@ -1,216 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
+<head
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Anshika Kush | AI-Powered Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<title>Anshika Kush — IT Recruiter & Talent Acquisition Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-  :root {
-    --bg: #050505; --card: #13131a; --accent1: #ff3366; --accent2: #00f2ff;
-    --text: #ffffff; --muted: #a0a0a0; --border: rgba(255,255,255,0.08);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.6; overflow-x: hidden; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
-  
-  /* Scroll Animation */
-  .fade-up { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-  
-  /* 01 HERO SECTION */
-  header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%); }
-  .status-badge { border: 1px solid var(--accent2); color: var(--accent2); padding: 8px 20px; border-radius: 30px; font-size: 0.7rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-  h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 12vw, 7rem); line-height: 0.9; background: linear-gradient(to right, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; }
-  .hero-tag { letter-spacing: 5px; color: var(--muted); margin-top: 20px; text-transform: uppercase; font-size: 0.9rem; }
-
-  /* SECTION STYLING */
-  section { padding: 100px 0; border-bottom: 1px solid var(--border); }
-  h2 { font-family: 'Syne', sans-serif; font-size: 2.2rem; margin-bottom: 50px; display: flex; align-items: center; }
-  h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--accent1), transparent); margin-left: 20px; }
-
-  /* BLOCK GRID */
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-  .card { background: var(--card); border: 1px solid var(--border); padding: 35px; border-radius: 24px; transition: 0.4s; position: relative; }
-  .card:hover { transform: translateY(-10px); border-color: var(--accent1); box-shadow: 0 10px 30px rgba(255, 51, 102, 0.1); }
-  .tag { color: var(--accent1); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; }
-  .card-title { font-size: 1.4rem; font-weight: 700; color: var(--accent2); margin-bottom: 8px; }
-  .card-subtitle { font-weight: 600; color: var(--text); display: block; margin-bottom: 10px; }
-  .card-desc { color: var(--muted); font-size: 0.95rem; }
-
-  /* 04 SKILL BARS */
-  .skill-item { margin-bottom: 25px; }
-  .skill-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-  .bar-bg { background: rgba(255,255,255,0.05); height: 10px; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; }
-  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent1), var(--accent2)); border-radius: 20px; transition: width 1.5s ease-in-out; }
-
-  /* BUTTONS */
-  .btn { padding: 16px 40px; border-radius: 50px; background: var(--accent1); color: #fff; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
-  .btn:hover { box-shadow: 0 0 30px rgba(255, 51, 102, 0.4); transform: scale(1.05); }
-
-  /* HOBBIES */
-  .hobby-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 2.5rem; }
+:root{
+  --bg:#0b0b0f;--card:#13131a;--card2:#1a1a26;
+  --border:rgba(255,255,255,0.07);
+  --a1:#ff5c5c;--a2:#ffd166;--a3:#06d6a0;--a4:#4cc9f0;--a5:#c77dff;
+  --text:#f0eeff;--muted:#888899;--r:18px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(11,11,15,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--text);text-decoration:none}
+.nav-logo span{color:var(--a1)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;padding:6px 13px;border-radius:20px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--card2)}
+.hero{min-height:100vh;width:100%;display:flex;align-items:center;justify-content:center;padding:130px 40px 90px;position:relative;overflow:hidden;text-align:center}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 40%,rgba(255,92,92,.15) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 80% 60%,rgba(76,201,240,.12) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 50% 10%,rgba(199,125,255,.10) 0%,transparent 60%)}
+.hero-inner{position:relative;z-index:1;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(6,214,160,.12);border:1px solid rgba(6,214,160,.3);color:var(--a3);font-size:12px;font-weight:600;letter-spacing:.1em;padding:7px 20px;border-radius:30px;margin-bottom:30px;text-transform:uppercase}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(44px,8vw,82px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:22px}
+.hero h1 .name{color:var(--a1)}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px}
+.hero-pill{font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;background:var(--card);border:1px solid var(--border);color:var(--muted)}
+.hero-sub{font-size:16px;color:var(--muted);max-width:640px;margin:0 auto 38px;line-height:1.8}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-p{background:var(--a1);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;padding:14px 34px;border-radius:50px;text-decoration:none;font-size:15px;transition:transform .2s,box-shadow .2s;box-shadow:0 0 30px rgba(255,92,92,.35)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(255,92,92,.55)}
+.btn-g{border:1px solid var(--border);color:var(--text);background:var(--card);font-family:'DM Sans',sans-serif;font-weight:500;padding:14px 34px;border-radius:50px;text-decoration:none;font-size:15px;transition:all .2s}
+.btn-g:hover{border-color:rgba(255,255,255,.2);background:var(--card2)}
+section{padding:96px 40px;max-width:1100px;margin:0 auto}
+.sh{margin-bottom:50px}
+.stag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:14px}
+.t1{background:rgba(255,92,92,.12);color:var(--a1);border:1px solid rgba(255,92,92,.25)}
+.t2{background:rgba(255,209,102,.12);color:var(--a2);border:1px solid rgba(255,209,102,.25)}
+.t3{background:rgba(6,214,160,.12);color:var(--a3);border:1px solid rgba(6,214,160,.25)}
+.t4{background:rgba(76,201,240,.12);color:var(--a4);border:1px solid rgba(76,201,240,.25)}
+.t5{background:rgba(199,125,255,.12);color:var(--a5);border:1px solid rgba(199,125,255,.25)}
+.sh h2{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-1px;line-height:1.1}
+.divider{border:none;border-top:1px solid var(--border);margin:0 40px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.acard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px 26px}
+.acard .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.acard .val{font-family:'Syne',sans-serif;font-size:18px;font-weight:700}
+.v1{color:var(--a1)}.v2{color:var(--a2)}.v3{color:var(--a3)}.v4{color:var(--a4)}
+.abio{background:var(--card2);border:1px solid var(--border);border-radius:var(--r);padding:28px 30px;grid-column:1/-1;font-size:15px;color:var(--muted);line-height:1.9}
+.abio strong{color:var(--text)}
+.exp-list{display:flex;flex-direction:column;gap:20px}
+.ecard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 28px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.ecard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
+.ecard.e1::before{background:var(--a1)}.ecard.e2::before{background:var(--a4)}
+.ecard.e3::before{background:var(--a3)}.ecard.e4::before{background:var(--a5)}
+.ecard:hover{border-color:rgba(255,255,255,.14);transform:translateY(-2px)}
+.ehead{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.etitle{font-family:'Syne',sans-serif;font-size:18px;font-weight:700}
+.eco{font-size:13px;color:var(--muted);margin-top:3px}
+.eperiod{font-size:12px;font-weight:500;padding:4px 13px;border-radius:20px;background:var(--card2);color:var(--muted);border:1px solid var(--border);white-space:nowrap}
+.ebullets{padding-left:18px;margin-bottom:14px}
+.ebullets li{font-size:14px;color:var(--muted);margin-bottom:7px;line-height:1.65}
+.ebullets li strong{color:var(--text)}
+.etags{display:flex;flex-wrap:wrap;gap:7px}
+.etag{font-size:11px;font-weight:500;padding:3px 11px;border-radius:20px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
+.achieve-badge{display:inline-block;background:rgba(255,209,102,.12);border:1px solid rgba(255,209,102,.3);color:var(--a2);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px}
+.sgroup{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px}
+.sgtitle{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:9px}
+.sdot{width:10px;height:10px;border-radius:50%}
+.sitem{margin-bottom:12px}
+.srow{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px}
+.sname{color:var(--text)}.spct{color:var(--muted);font-size:12px}
+.sbg{height:4px;border-radius:99px;background:rgba(255,255,255,.07)}
+.sbar{height:4px;border-radius:99px}
+.tech-cloud{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+.tech-tag{font-size:12px;font-weight:500;padding:5px 13px;border-radius:20px;background:var(--card);border:1px solid var(--border);color:var(--muted)}
+.edu-list{display:flex;flex-direction:column;gap:16px}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px 26px;display:flex;gap:20px;align-items:flex-start;transition:border-color .2s}
+.edu-card:hover{border-color:rgba(255,209,102,.35)}
+.edu-icon{width:48px;height:48px;border-radius:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(255,209,102,.13)}
+.edu-deg{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:4px}
+.edu-school{color:var(--a2);font-size:13px;font-weight:500;margin-bottom:3px}
+.edu-year{color:var(--muted);font-size:12px}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px 18px;text-align:center;transition:all .22s}
+.cert-card:hover{border-color:rgba(76,201,240,.35);transform:translateY(-3px)}
+.cert-icon{font-size:28px;margin-bottom:10px}
+.cert-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4}
+.cert-issuer{color:var(--a4);font-size:12px;margin-bottom:4px}
+.cert-year{color:var(--muted);font-size:11px;line-height:1.5}
+.cert-cat{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:10px}
+.cat-ai{background:rgba(199,125,255,.12);color:var(--a5);border:1px solid rgba(199,125,255,.25)}
+.cat-hr{background:rgba(6,214,160,.12);color:var(--a3);border:1px solid rgba(6,214,160,.25)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s}
+.proj-card:hover{border-color:rgba(199,125,255,.35);transform:translateY(-4px)}
+.proj-banner{height:100px;display:flex;align-items:center;justify-content:center;font-size:36px}
+.proj-body{padding:20px}
+.proj-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.proj-desc{color:var(--muted);font-size:13px;margin-bottom:12px;line-height:1.65}
+.proj-stack{display:flex;flex-wrap:wrap;gap:6px}
+.proj-stack span{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;background:rgba(199,125,255,.1);color:var(--a5);border:1px solid rgba(199,125,255,.2)}
+.proj-impact{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;color:var(--a3);background:rgba(6,214,160,.1);border:1px solid rgba(6,214,160,.2);padding:3px 11px;border-radius:20px}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.loc-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;position:relative;overflow:hidden}
+.loc-card::after{content:'';position:absolute;right:-20px;bottom:-20px;width:90px;height:90px;border-radius:50%;opacity:.14}
+.loc-card.lc1::after{background:var(--a3)}.loc-card.lc2::after{background:var(--a4)}
+.loc-pin{font-size:24px;margin-bottom:10px}
+.loc-lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.loc-city{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:4px}
+.lc1 .loc-city{color:var(--a3)}.lc2 .loc-city{color:var(--a4)}
+.loc-state{color:var(--muted);font-size:13px}
+.notice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px 44px;display:flex;align-items:center;gap:38px;flex-wrap:wrap}
+.notice-big{font-family:'Syne',sans-serif;font-size:68px;font-weight:800;color:var(--a1);line-height:1}
+.notice-info h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.notice-info p{color:var(--muted);font-size:14px;max-width:460px;line-height:1.7}
+.ntags{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.ntag{font-size:12px;padding:5px 14px;border-radius:20px;background:rgba(255,92,92,.1);color:var(--a1);border:1px solid rgba(255,92,92,.2)}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.lang-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px 16px;text-align:center;transition:all .2s}
+.lang-card:hover{transform:translateY(-3px)}
+.lang-flag{font-size:30px;margin-bottom:9px}
+.lang-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px}
+.lang-lvl{font-size:11px;padding:3px 11px;border-radius:20px;display:inline-block}
+.ln{background:rgba(6,214,160,.12);color:var(--a3);border:1px solid rgba(6,214,160,.25)}
+.lf{background:rgba(76,201,240,.12);color:var(--a4);border:1px solid rgba(76,201,240,.25)}
+.ach-list{display:flex;flex-direction:column;gap:13px}
+.ach-item{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;display:flex;align-items:flex-start;gap:16px;transition:all .2s}
+.ach-item:hover{border-color:rgba(255,209,102,.35);transform:translateX(4px)}
+.ach-em{font-size:24px;flex-shrink:0;margin-top:2px}
+.ach-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:3px}
+.ach-desc{color:var(--muted);font-size:13px;line-height:1.6}
+.hobby-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:13px}
+.hobby-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px 12px;text-align:center;transition:all .2s}
+.hobby-card:hover{transform:translateY(-4px) scale(1.03);border-color:rgba(255,255,255,.15)}
+.hobby-icon{font-size:30px;margin-bottom:9px}
+.hobby-name{font-size:13px;font-weight:500}
+.contact-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:44px;text-align:center}
+.contact-wrap h3{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;margin-bottom:10px}
+.contact-wrap p{color:var(--muted);font-size:15px;margin-bottom:28px}
+.clinks{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cpill{display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:50px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;font-weight:500;transition:all .2s;background:var(--card2)}
+.cpill:hover{border-color:rgba(255,255,255,.2)}
+.cpill.cl{background:rgba(76,201,240,.1);border-color:rgba(76,201,240,.25);color:var(--a4)}
+.cpill.cg{background:rgba(199,125,255,.1);border-color:rgba(199,125,255,.25);color:var(--a5)}
+.cpill.cn{background:rgba(6,214,160,.1);border-color:rgba(6,214,160,.25);color:var(--a3)}
+footer{text-align:center;padding:36px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+footer span{color:var(--a1)}
+.fade-up{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:700px){
+  nav{padding:0 18px}.nav-links{display:none}
+  section{padding:64px 18px}.divider{margin:0 18px}
+  .about-grid,.loc-grid{grid-template-columns:1fr}
+  .notice-card{padding:24px 20px}.notice-big{font-size:48px}
+  .contact-wrap{padding:26px 16px}
+  .hero{padding:110px 20px 70px}
+}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="status-badge fade-up">● Available for Strategic Roles</div>
-  <h1 class="fade-up">Anshika<br>Kush</h1>
-  <p class="hero-tag fade-up">IT Recruitment • TA Analytics • AI Automation</p>
-</header>
-
-<div class="container">
-  
-  <section class="fade-up">
-    <div class="grid">
-      <div class="card" style="text-align:center;"><div class="card-title" style="font-size:3rem;">4+</div><p class="tag">Years Experience</p></div>
-      <div class="card" style="text-align:center;"><div class="card-title" style="font-size:3rem;">60%</div><p class="tag">AI Time Saved</p></div>
-      <div class="card" style="text-align:center;"><div class="card-title" style="font-size:3rem;">10+</div><p class="tag">Vendors Managed</p></div>
+<nav>
+  <a href="#hero" class="nav-logo">Anshika<span>Kush</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certs</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner fade-up">
+    <div class="hero-badge">&#10022; Open to New Opportunities</div>
+    <h1>Hi, I'm<br><span class="name">Anshika Kush</span></h1>
+    <div class="hero-pills">
+      <span class="hero-pill">&#127919; IT Recruiter</span>
+      <span class="hero-pill">&#128202; Talent Acquisition Analyst</span>
+      <span class="hero-pill">&#129302; AI-Powered TA Automation</span>
+      <span class="hero-pill">&#127916; Media &amp; Broadcast Hiring</span>
+      <span class="hero-pill">&#128205; Noida, UP</span>
     </div>
-  </section>
-
-  <section class="fade-up">
-    <h2>Professional Journey</h2>
-    <div class="card" style="margin-bottom: 25px;">
-      <span class="tag">2026 - Present</span>
-      <div class="card-title">Agitss | Recruitment Specialist</div>
-      <p class="card-desc">Managing full-cycle recruitment for Java, Python, and Cloud. Automated MIS dashboards and slashed reporting time by 60% using Claude & Excel Macros.</p>
+    <p class="hero-sub">4 Years of End-to-End Recruitment &middot; Lateral, Bulk &amp; Campus Hiring &middot; Closing 8&ndash;10 Roles/Month &middot; Reducing TA Manual Effort by 60% with AI</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-p">Get in Touch</a>
+      <a href="#experience" class="btn-g">View Experience</a>
     </div>
-    <div class="card" style="margin-bottom: 25px;">
-      <span class="tag">2023 - 2026</span>
-      <div class="card-title">Liberium Global (Zee Group) | Specialist</div>
-      <p class="card-desc">Led end-to-end media & tech hiring. Leveraged Google Gemini for candidate data extraction and Diversity & Inclusion initiatives.</p>
-    </div>
-    <div class="card">
-      <span class="tag">2022 - 2023</span>
-      <div class="card-title">Aaideology | Recruitment Specialist</div>
-      <p class="card-desc">Streamlined vendor coordination and optimized database management across various client accounts.</p>
-    </div>
-  </section>
-
-  <section class="fade-up">
-    <h2>Technical Arsenal</h2>
-    <div class="grid">
-      <div class="skill-column">
-        <div class="skill-item">
-          <div class="skill-label"><span>AI Prompt Engineering (Claude/Gemini)</span><span>98%</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width: 98%;"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-label"><span>Advanced Excel (Macros/MIS)</span><span>95%</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
-        </div>
+  </div>
+</section>
+<hr class="divider"/>
+<section id="about">
+  <div class="sh fade-up">
+    <div class="stag t1">01 &middot; About Me</div>
+    <h2>The Quick Picture</h2>
+  </div>
+  <div class="about-grid fade-up">
+    <div class="acard"><div class="lbl">Total Experience</div><div class="val v1">4 Years</div></div>
+    <div class="acard"><div class="lbl">Current Organization</div><div class="val v4">Agitss (IT Organization)</div></div>
+    <div class="acard"><div class="lbl">Roles Closed / Month</div><div class="val v3">8 &ndash; 10 Positions</div></div>
+    <div class="acard"><div class="lbl">Vendor Ecosystem Managed</div><div class="val v2">10+ Partners</div></div>
+    <div class="abio">Results-driven <strong>IT Recruiter &amp; Talent Acquisition Analyst</strong> with <strong>4 years of experience</strong> spanning IT staffing and media &amp; broadcast sectors, including <strong>2+ years within the Zee Group ecosystem</strong>. Proven expertise in lateral hiring, campus &amp; fresher hiring drives, and niche tech-stack sourcing (Java, Python, Cloud, DevOps, SAP) &mdash; consistently closing <strong>8&ndash;10 positions per month</strong> across concurrent mandates. Manages vendor ecosystems of <strong>10+ partners</strong> with strong SLA compliance. Championed <strong>Diversity &amp; Inclusion hiring</strong> across media and IT verticals. Distinguished by advanced <strong>AI integration</strong> &mdash; leveraging Claude (Anthropic) and Google Gemini to automate reporting workflows, generate job descriptions &amp; extract insights from large candidate datasets &mdash; <strong>reducing manual effort by up to 60%</strong>.</div>
+  </div>
+</section>
+<hr class="divider"/>
+<section id="experience">
+  <div class="sh fade-up">
+    <div class="stag t1">02 &middot; Experience</div>
+    <h2>Where I've Worked</h2>
+  </div>
+  <div class="exp-list fade-up">
+    <div class="ecard e1">
+      <div class="ehead">
+        <div><div class="etitle">Recruitment Specialist &ndash; IT Lateral Hiring</div><div class="eco">&#127962; Agitss (IT Organization) &nbsp;&middot;&nbsp; Full-time &nbsp;&middot;&nbsp; Noida</div></div>
+        <span class="eperiod">Feb 2026 &ndash; Present</span>
       </div>
-      <div class="skill-column">
-        <div class="skill-item">
-          <div class="skill-label"><span>IT Sourcing (Java/DevOps/SAP)</span><span>90%</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-label"><span>Diversity & Inclusion Hiring</span><span>85%</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
-        </div>
+      <ul class="ebullets">
+        <li>Managed full-cycle lateral IT recruitment for <strong>15+ concurrent positions</strong> across Java, Python, Cloud (AWS/Azure), DevOps &amp; SAP &mdash; closing <strong>8&ndash;10 positions/month</strong> with consistent SLA TAT compliance.</li>
+        <li>Designed end-to-end <strong>MIS dashboards tracking 10+ recruitment KPIs</strong> &mdash; open positions, offer-to-join ratio, TAT &amp; vendor hit rate &mdash; enabling data-driven hiring decisions for leadership.</li>
+        <li>Automated weekly/monthly HR reports using <strong>Excel macros, pivot tables &amp; AI tools</strong> (Claude/ChatGPT), reducing report generation time by <strong>~60%</strong> and eliminating manual errors.</li>
+        <li>Leveraged <strong>Claude (Anthropic) &amp; ChatGPT</strong> to auto-generate JDs, Boolean search strings, email templates &amp; vendor briefs &mdash; cutting drafting time from hours to minutes.</li>
+        <li>Automated repetitive TA workflows using AI prompt engineering, <strong>saving 5+ hours of manual effort per week</strong>.</li>
+        <li>Managed vendor ecosystem of <strong>10+ empaneled partners</strong>; maintained SLA compliance &amp; monitored submission-to-interview conversion rates across all mandates.</li>
+      </ul>
+      <div class="etags"><span class="etag">IT Lateral Hiring</span><span class="etag">Java / Python / Cloud / SAP</span><span class="etag">MIS Dashboards</span><span class="etag">Claude AI</span><span class="etag">Excel Macros</span><span class="etag">Vendor Management</span><span class="etag">Boolean Search</span></div>
+    </div>
+    <div class="ecard e2">
+      <div class="ehead">
+        <div><div class="etitle">Recruitment Specialist &ndash; Media &amp; IT Hiring</div><div class="eco">&#127962; Liberium Global Resources (Zee Group &ndash; Media &amp; Entertainment) &nbsp;&middot;&nbsp; Full-time</div></div>
+        <span class="eperiod">Oct 2023 &ndash; Feb 2026</span>
       </div>
+      <div class="achieve-badge">&#127942; Key Achievement</div>
+      <ul class="ebullets">
+        <li>Led end-to-end recruitment for <strong>50+ roles</strong> across editorial, anchoring, digital content, broadcast operations &amp; corporate functions &mdash; closing <strong>6&ndash;8 positions/month</strong>.</li>
+        <li>Championed <strong>Diversity &amp; Inclusion hiring</strong> across media verticals &mdash; ensuring diverse candidate slates for editorial, production &amp; leadership roles.</li>
+        <li>Designed MIS dashboards tracking time-to-hire, candidate conversion rate, sourcing efficiency &amp; offer-to-joining ratio across media and corporate verticals.</li>
+        <li>Used <strong>Google Gemini &amp; Claude</strong> to automate recurring MIS reports, generate JDs &amp; summarize large candidate datasets &mdash; reducing manual effort by <strong>~30%</strong>.</li>
+        <li>Built Excel-based automated reports using <strong>Pivot Tables, Power Query, XLOOKUP &amp; macros</strong> for weekly/monthly management reviews across Zee Group business units.</li>
+        <li>Mentored MIS reporting team; standardised data entry processes &amp; ensured ATS data hygiene for consistent reporting output.</li>
+        <li><strong>Automated 4+ recurring MIS reports</strong> using Excel macros &amp; AI-assisted templates, saving <strong>~5 hours/week</strong>. Recognised for driving AI adoption &amp; D&amp;I hiring practices.</li>
+      </ul>
+      <div class="etags"><span class="etag">Media Recruitment</span><span class="etag">Zee Group</span><span class="etag">D&amp;I Hiring</span><span class="etag">Google Gemini</span><span class="etag">Power Query &amp; XLOOKUP</span><span class="etag">ATS Management</span></div>
     </div>
-  </section>
-
-  <section class="fade-up">
-    <h2>Elite Milestones</h2>
-    <div class="grid">
-      <div class="card" style="border-top: 4px solid var(--accent1);">
-        <span style="font-size: 2rem;">🏆</span>
-        <div class="card-title">Best Performer</div>
-        <span class="card-subtitle">Liberium Global (Zee Group)</span>
-        <p class="card-desc">Awarded for driving excellence in AI adoption and D&I hiring.</p>
-      </div>
-      <div class="card" style="border-top: 4px solid var(--accent1);">
-        <span style="font-size: 2rem;">🌟</span>
-        <div class="card-title">Best Performer</div>
-        <span class="card-subtitle">Aaideology</span>
-        <p class="card-desc">Recognized for hiring KPI optimization and database excellence.</p>
-      </div>
-      <div class="card" style="border-top: 4px solid var(--accent2);">
-        <span style="font-size: 2rem;">🎓</span>
-        <div class="card-title">Student of the Batch</div>
-        <span class="card-subtitle">Uttaranchal University</span>
-        <p class="card-desc">Ranked #1 student for two consecutive years (Year 1 & Year 2).</p>
-      </div>
+    <div class="ecard e3">
+      <div class="ehea<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Anshika Kush — IT Recruiter & Talent Acquisition Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0b0b0f;--card:#13131a;--card2:#1a1a26;
+  --border:rgba(255,255,255,0.07);
+  --a1:#ff5c5c;--a2:#ffd166;--a3:#06d6a0;--a4:#4cc9f0;--a5:#c77dff;
+  --text:#f0eeff;--muted:#888899;--r:18px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(11,11,15,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--text);text-decoration:none}
+.nav-logo span{color:var(--a1)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;padding:6px 13px;border-radius:20px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--card2)}
+.hero{min-height:100vh;width:100%;display:flex;align-items:center;justify-content:center;padding:130px 40px 90px;position:relative;overflow:hidden;text-align:center}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 40%,rgba(255,92,92,.15) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 80% 60%,rgba(76,201,240,.12) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 50% 10%,rgba(199,125,255,.10) 0%,transparent 60%)}
+.hero-inner{position:relative;z-index:1;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(6,214,160,.12);border:1px solid rgba(6,214,160,.3);color:var(--a3);font-size:12px;font-weight:600;letter-spacing:.1em;padding:7px 20px;border-radius:30px;margin-bottom:30px;text-transform:uppercase}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(44px,8vw,82px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:22px}
+.hero h1 .name{color:var(--a1)}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px}
+.hero-pill{font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;background:var(--card);border:1px solid var(--border);color:var(--muted)}
+.hero-sub{font-size:16px;color:var(--muted);max-width:640px;margin:0 auto 38px;line-height:1.8}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-p{background:var(--a1);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;padding:14px 34px;border-radius:50px;text-decoration:none;font-size:15px;transition:transform .2s,box-shadow .2s;box-shadow:0 0 30px rgba(255,92,92,.35)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(255,92,92,.55)}
+.btn-g{border:1px solid var(--border);color:var(--text);background:var(--card);font-family:'DM Sans',sans-serif;font-weight:500;padding:14px 34px;border-radius:50px;text-decoration:none;font-size:15px;transition:all .2s}
+.btn-g:hover{border-color:rgba(255,255,255,.2);background:var(--card2)}
+section{padding:96px 40px;max-width:1100px;margin:0 auto}
+.sh{margin-bottom:50px}
+.stag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:14px}
+.t1{background:rgba(255,92,92,.12);color:var(--a1);border:1px solid rgba(255,92,92,.25)}
+.t2{background:rgba(255,209,102,.12);color:var(--a2);border:1px solid rgba(255,209,102,.25)}
+.t3{background:rgba(6,214,160,.12);color:var(--a3);border:1px solid rgba(6,214,160,.25)}
+.t4{background:rgba(76,201,240,.12);color:var(--a4);border:1px solid rgba(76,201,240,.25)}
+.t5{background:rgba(199,125,255,.12);color:var(--a5);border:1px solid rgba(199,125,255,.25)}
+.sh h2{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-1px;line-height:1.1}
+.divider{border:none;border-top:1px solid var(--border);margin:0 40px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.acard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px 26px}
+.acard .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.acard .val{font-family:'Syne',sans-serif;font-size:18px;font-weight:700}
+.v1{color:var(--a1)}.v2{color:var(--a2)}.v3{color:var(--a3)}.v4{color:var(--a4)}
+.abio{background:var(--card2);border:1px solid var(--border);border-radius:var(--r);padding:28px 30px;grid-column:1/-1;font-size:15px;color:var(--muted);line-height:1.9}
+.abio strong{color:var(--text)}
+.exp-list{display:flex;flex-direction:column;gap:20px}
+.ecard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 28px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.ecard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
+.ecard.e1::before{background:var(--a1)}.ecard.e2::before{background:var(--a4)}
+.ecard.e3::before{background:var(--a3)}.ecard.e4::before{background:var(--a5)}
+.ecard:hover{border-color:rgba(255,255,255,.14);transform:translateY(-2px)}
+.ehead{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.etitle{font-family:'Syne',sans-serif;font-size:18px;font-weight:700}
+.eco{font-size:13px;color:var(--muted);margin-top:3px}
+.eperiod{font-size:12px;font-weight:500;padding:4px 13px;border-radius:20px;background:var(--card2);color:var(--muted);border:1px solid var(--border);white-space:nowrap}
+.ebullets{padding-left:18px;margin-bottom:14px}
+.ebullets li{font-size:14px;color:var(--muted);margin-bottom:7px;line-height:1.65}
+.ebullets li strong{color:var(--text)}
+.etags{display:flex;flex-wrap:wrap;gap:7px}
+.etag{font-size:11px;font-weight:500;padding:3px 11px;border-radius:20px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
+.achieve-badge{display:inline-block;background:rgba(255,209,102,.12);border:1px solid rgba(255,209,102,.3);color:var(--a2);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px}
+.sgroup{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px}
+.sgtitle{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:9px}
+.sdot{width:10px;height:10px;border-radius:50%}
+.sitem{margin-bottom:12px}
+.srow{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px}
+.sname{color:var(--text)}.spct{color:var(--muted);font-size:12px}
+.sbg{height:4px;border-radius:99px;background:rgba(255,255,255,.07)}
+.sbar{height:4px;border-radius:99px}
+.tech-cloud{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+.tech-tag{font-size:12px;font-weight:500;padding:5px 13px;border-radius:20px;background:var(--card);border:1px solid var(--border);color:var(--muted)}
+.edu-list{display:flex;flex-direction:column;gap:16px}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px 26px;display:flex;gap:20px;align-items:flex-start;transition:border-color .2s}
+.edu-card:hover{border-color:rgba(255,209,102,.35)}
+.edu-icon{width:48px;height:48px;border-radius:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(255,209,102,.13)}
+.edu-deg{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:4px}
+.edu-school{color:var(--a2);font-size:13px;font-weight:500;margin-bottom:3px}
+.edu-year{color:var(--muted);font-size:12px}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px 18px;text-align:center;transition:all .22s}
+.cert-card:hover{border-color:rgba(76,201,240,.35);transform:translateY(-3px)}
+.cert-icon{font-size:28px;margin-bottom:10px}
+.cert-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:6px;line-height:1.4}
+.cert-issuer{color:var(--a4);font-size:12px;margin-bottom:4px}
+.cert-year{color:var(--muted);font-size:11px;line-height:1.5}
+.cert-cat{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:10px}
+.cat-ai{background:rgba(199,125,255,.12);color:var(--a5);border:1px solid rgba(199,125,255,.25)}
+.cat-hr{background:rgba(6,214,160,.12);color:var(--a3);border:1px solid rgba(6,214,160,.25)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .25s}
+.proj-card:hover{border-color:rgba(199,125,255,.35);transform:translateY(-4px)}
+.proj-banner{height:100px;display:flex;align-items:center;justify-content:center;font-size:36px}
+.proj-body{padding:20px}
+.proj-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.proj-desc{color:var(--muted);font-size:13px;margin-bottom:12px;line-height:1.65}
+.proj-stack{display:flex;flex-wrap:wrap;gap:6px}
+.proj-stack span{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;background:rgba(199,125,255,.1);color:var(--a5);border:1px solid rgba(199,125,255,.2)}
+.proj-impact{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;color:var(--a3);background:rgba(6,214,160,.1);border:1px solid rgba(6,214,160,.2);padding:3px 11px;border-radius:20px}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.loc-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;position:relative;overflow:hidden}
+.loc-card::after{content:'';position:absolute;right:-20px;bottom:-20px;width:90px;height:90px;border-radius:50%;opacity:.14}
+.loc-card.lc1::after{background:var(--a3)}.loc-card.lc2::after{background:var(--a4)}
+.loc-pin{font-size:24px;margin-bottom:10px}
+.loc-lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.loc-city{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:4px}
+.lc1 .loc-city{color:var(--a3)}.lc2 .loc-city{color:var(--a4)}
+.loc-state{color:var(--muted);font-size:13px}
+.notice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px 44px;display:flex;align-items:center;gap:38px;flex-wrap:wrap}
+.notice-big{font-family:'Syne',sans-serif;font-size:68px;font-weight:800;color:var(--a1);line-height:1}
+.notice-info h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.notice-info p{color:var(--muted);font-size:14px;max-width:460px;line-height:1.7}
+.ntags{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.ntag{font-size:12px;padding:5px 14px;border-radius:20px;background:rgba(255,92,92,.1);color:var(--a1);border:1px solid rgba(255,92,92,.2)}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.lang-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px 16px;text-align:center;transition:all .2s}
+.lang-card:hover{transform:translateY(-3px)}
+.lang-flag{font-size:30px;margin-bottom:9px}
+.lang-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px}
+.lang-lvl{font-size:11px;padding:3px 11px;border-radius:20px;display:inline-block}
+.ln{background:rgba(6,214,160,.12);color:var(--a3);border:1px solid rgba(6,214,160,.25)}
+.lf{background:rgba(76,201,240,.12);color:var(--a4);border:1px solid rgba(76,201,240,.25)}
+.ach-list{display:flex;flex-direction:column;gap:13px}
+.ach-item{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;display:flex;align-items:flex-start;gap:16px;transition:all .2s}
+.ach-item:hover{border-color:rgba(255,209,102,.35);transform:translateX(4px)}
+.ach-em{font-size:24px;flex-shrink:0;margin-top:2px}
+.ach-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:3px}
+.ach-desc{color:var(--muted);font-size:13px;line-height:1.6}
+.hobby-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:13px}
+.hobby-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px 12px;text-align:center;transition:all .2s}
+.hobby-card:hover{transform:translateY(-4px) scale(1.03);border-color:rgba(255,255,255,.15)}
+.hobby-icon{font-size:30px;margin-bottom:9px}
+.hobby-name{font-size:13px;font-weight:500}
+.contact-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:44px;text-align:center}
+.contact-wrap h3{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;margin-bottom:10px}
+.contact-wrap p{color:var(--muted);font-size:15px;margin-bottom:28px}
+.clinks{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cpill{display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:50px;border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;font-weight:500;transition:all .2s;background:var(--card2)}
+.cpill:hover{border-color:rgba(255,255,255,.2)}
+.cpill.cl{background:rgba(76,201,240,.1);border-color:rgba(76,201,240,.25);color:var(--a4)}
+.cpill.cg{background:rgba(199,125,255,.1);border-color:rgba(199,125,255,.25);color:var(--a5)}
+.cpill.cn{background:rgba(6,214,160,.1);border-color:rgba(6,214,160,.25);color:var(--a3)}
+footer{text-align:center;padding:36px;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+footer span{color:var(--a1)}
+.fade-up{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:700px){
+  nav{padding:0 18px}.nav-links{display:none}
+  section{padding:64px 18px}.divider{margin:0 18px}
+  .about-grid,.loc-grid{grid-template-columns:1fr}
+  .notice-card{padding:24px 20px}.notice-big{font-size:48px}
+  .contact-wrap{padding:26px 16px}
+  .hero{padding:110px 20px 70px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#hero" class="nav-logo">Anshika<span>Kush</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certs</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner fade-up">
+    <div class="hero-badge">&#10022; Open to New Opportunities</div>
+    <h1>Hi, I'm<br><span class="name">Anshika Kush</span></h1>
+    <div class="hero-pills">
+      <span class="hero-pill">&#127919; IT Recruiter</span>
+      <span class="hero-pill">&#128202; Talent Acquisition Analyst</span>
+      <span class="hero-pill">&#129302; AI-Powered TA Automation</span>
+      <span class="hero-pill">&#127916; Media &amp; Broadcast Hiring</span>
+      <span class="hero-pill">&#128205; Noida, UP</span>
     </div>
-  </section>
-
-  <section class="fade-up">
-    <h2>Key Projects</h2>
-    <div class="card">
-      <span class="tag">AI Implementation</span>
-      <div class="card-title">Recruitment Automation Workflow</div>
-      <p class="card-desc">Integrated Claude & Gemini into the sourcing workflow, reducing job description and reporting time from 45 minutes to 5 minutes per role.</p>
+    <p class="hero-sub">4 Years of End-to-End Recruitment &middot; Lateral, Bulk &amp; Campus Hiring &middot; Closing 8&ndash;10 Roles/Month &middot; Reducing TA Manual Effort by 60% with AI</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-p">Get in Touch</a>
+      <a href="#experience" class="btn-g">View Experience</a>
     </div>
-  </section>
-
-  <section class="fade-up">
-    <h2>Certifications</h2>
-    <div class="grid">
-      <div class="card"><span class="tag">Anthropic</span><div class="card-title" style="font-size:1.1rem;">Claude Code in Action</div></div>
-      <div class="card"><span class="tag">AWS</span><div class="card-title" style="font-size:1.1rem;">Gen AI: Art of Possible</div></div>
-      <div class="card"><span class="tag">LinkedIn</span><div class="card-title" style="font-size:1.1rem;">AI-Powered TA</div></div>
-      <div class="card"><span class="tag">Udemy</span><div class="card-title" style="font-size:1.1rem;">Excel: Animation + AI</div></div>
-    </div>
-  </section>
-
-  <section class="fade-up">
-    <h2>Academic Background</h2>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">2022-2024</span>
-        <div class="card-title">MBA - HR Management</div>
-        <p class="card-desc">Symbiosis Centre of Distance Learning, Pune</p>
-      </div>
-      <div class="card">
-        <span class="tag">2019-2022</span>
-        <div class="card-title">BBA - HR Management</div>
-        <p class="card-desc">Uttaranchal University, Dehradun</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="fade-up">
-    <h2>Sourcing & Platforms</h2>
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); text-align: center;">
-      <div class="card" style="padding:20px;">LinkedIn AI</div>
-      <div class="card" style="padding:20px;">GitHub</div>
-      <div class="card" style="padding:20px;">Power BI</div>
-      <div class="card" style="padding:20px;">Naukri</div>
-    </div>
-  </section>
-
-  <section class="fade-up" style="text-align: center;">
-    <h2>Beyond Work</h2>
-    <div class="hobby-grid">
-      <span>📸</span><span>🎮</span><span>✈️</span><span>📚</span><span>🏋️</span>
-    </div>
-  </section>
-
-  <section id="contact" class="fade-up" style="text-align: center; border-bottom: none;">
-    <h2 style="justify-content: center;">Let's Connect</h2>
-    <div class="card">
-      <p style="margin-bottom: 30px;">Open to discussing the future of AI-driven recruitment.</p>
-      <a href="mailto:anshikakush1333@gmail.com" class="btn">Email Me</a>
-      <a href="https://linkedin.com/in/anshika-kush-b8b0b3215" target="_blank" class="btn" style="background:var(--accent2); color:#000; margin-left: 15px;">LinkedIn</a>
-    </div>
-  </section>
-
-</div>
-
-<footer style="text-align: center; padding: 40px; color: var(--muted); font-size: 0.8rem; letter-spacing: 2px;">
-  ANSHIKA KUSH • © 2026 • BUILT WITH AI
-</footer>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+  </div>
+</section>
+<hr class="divider"/>
+<section id="about">
+  <div class="sh fade-up">
+    <div class="stag t1">01 &middot; About Me</div>
+    <h2>The Quick Picture</h2>
+  </div>
+  <div class="about-grid fade-up">
+    <div class="acard"><div class="lbl">Total Experience</div><div class="val v1">4 Years</div></div>
+    <div class="acard"><div class="lbl">Current Organization</div><div class="val v4">Agitss (IT Organization)</div></div>
+    <div class="acard"><div class="lbl">Roles Closed / Month</div><div class="val v3">8 &ndash; 10 Positions</div></div>
+    <div class="acard"><div class="lbl">Vendor Ecosystem Managed</div><div class="val v2">10+ Partners</div></div>
+    <div class="abio">Results-driven <strong>IT Recruiter &amp; Talent Acquisition Analyst</strong> with <strong>4 years of experience</strong> spanning IT staffing and media &amp; broadcast sectors, including <strong>2+ years within the Zee Group ecosystem</strong>. Proven expertise in lateral hiring, campus &amp; fresher hiring drives, and niche tech-stack sourcing (Java, Python, Cloud, DevOps, SAP) &mdash; consistently closing <strong>8&ndash;10 positions per month</strong> across concurrent mandates. Manages vendor ecosystems of <strong>10+ partners</strong> with strong SLA compliance. Championed <strong>Diversity &amp; Inclusion hiring</strong> across media and IT verticals. Distinguished by advanced <strong>AI integration</strong> &mdash; leveraging Claude (Anthropic) and Google Gemini to automate reporting workflows, generate job de
