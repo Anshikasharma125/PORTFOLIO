@@ -3,194 +3,89 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Anshika Kush — Professional Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<title>Anshika Kush | AI-Powered Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --bg: #050505;
-    --card: #13131a;
-    --card2: #1a1a26;
-    --border: rgba(255,255,255,0.07);
-    --accent1: #ff3366; /* Neon Pink/Red */
-    --accent2: #00f2ff; /* Cyber Blue */
-    --text: #f0eeff;
-    --muted: #888899;
+    --bg: #050505; --card: #13131a; --accent1: #ff3366; --accent2: #00f2ff;
+    --text: #ffffff; --muted: #a0a0a0; --border: rgba(255,255,255,0.08);
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* UTILS */
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-  .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-  /* HERO matches video intro */
-  header {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%);
-  }
-  .status-badge {
-    background: rgba(0, 242, 255, 0.1);
-    color: var(--accent2);
-    padding: 8px 20px;
-    border-radius: 30px;
-    border: 1px solid var(--accent2);
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-  }
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(3rem, 12vw, 6.5rem);
-    line-height: 0.85;
-    background: linear-gradient(to right, var(--accent1), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  .hero-tag { font-size: 1.2rem; letter-spacing: 4px; color: var(--muted); font-weight: 500; }
-
-  /* SECTIONS */
-  section { padding: 100px 0; }
-  h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 50px; display: flex; align-items: center; }
-  h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(to right, var(--accent1), transparent); margin-left: 20px; }
-
-  /* CARDS */
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 40px;
-    border-radius: 24px;
-    position: relative;
-    transition: 0.4s;
-    overflow: hidden;
-  }
-  .card:hover { transform: translateY(-10px); border-color: var(--accent1); background: var(--card2); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.6; overflow-x: hidden; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
   
-  .card-tag { color: var(--accent1); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px; display: block; }
-  .card-title { font-size: 1.5rem; font-weight: 700; color: var(--accent2); margin-bottom: 10px; }
-  .card-subtitle { font-size: 1.1rem; font-weight: 500; margin-bottom: 15px; display: block; }
-  .card ul { padding-left: 20px; color: var(--muted); font-size: 0.95rem; }
-  .card li { margin-bottom: 10px; }
+  /* Scroll Animation */
+  .fade-up { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  
+  /* 01 HERO SECTION */
+  header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%); }
+  .status-badge { border: 1px solid var(--accent2); color: var(--accent2); padding: 8px 20px; border-radius: 30px; font-size: 0.7rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+  h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 12vw, 7rem); line-height: 0.9; background: linear-gradient(to right, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; }
+  .hero-tag { letter-spacing: 5px; color: var(--muted); margin-top: 20px; text-transform: uppercase; font-size: 0.9rem; }
 
-  /* SKILL BARS */
+  /* SECTION STYLING */
+  section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+  h2 { font-family: 'Syne', sans-serif; font-size: 2.2rem; margin-bottom: 50px; display: flex; align-items: center; }
+  h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--accent1), transparent); margin-left: 20px; }
+
+  /* BLOCK GRID */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+  .card { background: var(--card); border: 1px solid var(--border); padding: 35px; border-radius: 24px; transition: 0.4s; position: relative; }
+  .card:hover { transform: translateY(-10px); border-color: var(--accent1); box-shadow: 0 10px 30px rgba(255, 51, 102, 0.1); }
+  .tag { color: var(--accent1); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; }
+  .card-title { font-size: 1.4rem; font-weight: 700; color: var(--accent2); margin-bottom: 8px; }
+  .card-subtitle { font-weight: 600; color: var(--text); display: block; margin-bottom: 10px; }
+  .card-desc { color: var(--muted); font-size: 0.95rem; }
+
+  /* 04 SKILL BARS */
   .skill-item { margin-bottom: 25px; }
-  .skill-label { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 600; }
-  .bar-bg { background: rgba(255,255,255,0.05); height: 10px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); }
+  .skill-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+  .bar-bg { background: rgba(255,255,255,0.05); height: 10px; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; }
   .bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent1), var(--accent2)); border-radius: 20px; transition: width 1.5s ease-in-out; }
 
   /* BUTTONS */
-  .btn {
-    padding: 16px 45px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    background: var(--accent1);
-    color: white;
-    display: inline-block;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
-    margin-top: 30px;
-  }
+  .btn { padding: 16px 40px; border-radius: 50px; background: var(--accent1); color: #fff; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
   .btn:hover { box-shadow: 0 0 30px rgba(255, 51, 102, 0.4); transform: scale(1.05); }
 
-  footer { text-align: center; padding: 60px; border-top: 1px solid var(--border); color: var(--muted); letter-spacing: 2px; font-size: 0.8rem; }
+  /* HOBBIES */
+  .hobby-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 2.5rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="status-badge">● Open to New Opportunities</div>
+  <div class="status-badge fade-up">● Available for Strategic Roles</div>
   <h1 class="fade-up">Anshika<br>Kush</h1>
-  <p class="hero-tag fade-up">AI RECRUITER • TALENT ANALYST • AUTOMATION EXPERT</p>
-  <a href="#contact" class="btn fade-up">Let's Connect</a>
+  <p class="hero-tag fade-up">IT Recruitment • TA Analytics • AI Automation</p>
 </header>
 
 <div class="container">
   
   <section class="fade-up">
-    <h2>The Quick Picture</h2>
     <div class="grid">
-      <div class="card">
-        <span class="card-tag">Experience</span>
-        <div class="card-title">4+ Years</div>
-        <p style="color: var(--muted);">Specialized in IT Lateral Hiring & Talent Analytics.</p>
-      </div>
-      <div class="card">
-        <span class="card-tag">AI Impact</span>
-        <div class="card-title">60% Reduction</div>
-        <p style="color: var(--muted);">Manual effort saved in reporting & workflow automation.</p>
-      </div>
-      <div class="card">
-        <span class="card-tag">Scale</span>
-        <div class="card-title">8-10 Monthly</div>
-        <p style="color: var(--muted);">Consistent position closures across niche tech domains.</p>
-      </div>
+      <div class="card" style="text-align:center;"><div class="card-title" style="font-size:3rem;">4+</div><p class="tag">Years Experience</p></div>
+      <div class="card" style="text-align:center;"><div class="card-title" style="font-size:3rem;">60%</div><p class="tag">AI Time Saved</p></div>
+      <div class="card" style="text-align:center;"><div class="card-title" style="font-size:3rem;">10+</div><p class="tag">Vendors Managed</p></div>
     </div>
   </section>
 
   <section class="fade-up">
-    <h2>Elite Milestones</h2>
-    <div class="grid">
-      <div class="card" style="border-top: 4px solid var(--accent1);">
-        <span style="font-size: 2rem;">🏆</span>
-        <div class="card-title">Best Performer Award</div>
-        <span class="card-subtitle">Liberium Global (Zee Group)</span>
-        <p style="color: var(--muted);">Recognized for driving AI adoption and D&I hiring excellence across media verticals.</p>
-      </div>
-      <div class="card" style="border-top: 4px solid var(--accent1);">
-        <span style="font-size: 2rem;">🌟</span>
-        <div class="card-title">Best Performer Award</div>
-        <span class="card-subtitle">Aaideology</span>
-        <p style="color: var(--muted);">Awarded for database management and hiring KPI optimization excellence.</p>
-      </div>
-      <div class="card" style="border-top: 4px solid var(--accent2);">
-        <span style="font-size: 2rem;">🎓</span>
-        <div class="card-title">Student of the Batch</div>
-        <span class="card-subtitle">Uttaranchal University</span>
-        <p style="color: var(--muted);">Ranked #1 student for two consecutive years (Year 1 & 2).</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="fade-up" id="experience">
     <h2>Professional Journey</h2>
-    <div class="card" style="margin-bottom: 30px;">
-      <span class="card-tag">Feb 2026 — Present</span>
-      <div class="card-title">Recruitment Specialist - IT Lateral Hiring</div>
-      <span class="card-subtitle">Agitss (IT Organization)</span>
-      <ul>
-        <li>Manages full-cycle recruitment for niche tech: Java, Python, Cloud (AWS/Azure), DevOps, and SAP.</li>
-        <li>Designed MIS dashboards tracking 10+ recruitment KPIs like offer-to-join ratio and TAT.</li>
-        <li>Automated weekly reports using Claude & Excel Macros, reducing generation time by 60%.</li>
-      </ul>
+    <div class="card" style="margin-bottom: 25px;">
+      <span class="tag">2026 - Present</span>
+      <div class="card-title">Agitss | Recruitment Specialist</div>
+      <p class="card-desc">Managing full-cycle recruitment for Java, Python, and Cloud. Automated MIS dashboards and slashed reporting time by 60% using Claude & Excel Macros.</p>
     </div>
-
+    <div class="card" style="margin-bottom: 25px;">
+      <span class="tag">2023 - 2026</span>
+      <div class="card-title">Liberium Global (Zee Group) | Specialist</div>
+      <p class="card-desc">Led end-to-end media & tech hiring. Leveraged Google Gemini for candidate data extraction and Diversity & Inclusion initiatives.</p>
+    </div>
     <div class="card">
-      <span class="card-tag">Oct 2023 — Feb 2026</span>
-      <div class="card-title">Recruitment Specialist - Media & IT</div>
-      <span class="card-subtitle">Liberium Global (Zee Group)</span>
-      <ul>
-        <li>Led end-to-end recruitment for 50+ roles across digital content production and corporate functions.</li>
-        <li>Championed Diversity & Inclusion (D&I) initiatives ensuring diverse leadership slates.</li>
-        <li>Utilized Google Gemini and Claude to automate recurring reports and summarize large datasets.</li>
-      </ul>
+      <span class="tag">2022 - 2023</span>
+      <div class="card-title">Aaideology | Recruitment Specialist</div>
+      <p class="card-desc">Streamlined vendor coordination and optimized database management across various client accounts.</p>
     </div>
   </section>
 
@@ -203,56 +98,112 @@
           <div class="bar-bg"><div class="bar-fill" style="width: 98%;"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-label"><span>Advanced Excel (Macros/Power Query)</span><span>95%</span></div>
+          <div class="skill-label"><span>Advanced Excel (Macros/MIS)</span><span>95%</span></div>
           <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
         </div>
       </div>
       <div class="skill-column">
         <div class="skill-item">
-          <div class="skill-label"><span>IT Sourcing (Java/Cloud/DevOps)</span><span>90%</span></div>
+          <div class="skill-label"><span>IT Sourcing (Java/DevOps/SAP)</span><span>90%</span></div>
           <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-label"><span>Diversity & Inclusion Hiring</span><span>88%</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width: 88%;"></div></div>
+          <div class="skill-label"><span>Diversity & Inclusion Hiring</span><span>85%</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="fade-up">
-    <h2>Learning & Credentials</h2>
+    <h2>Elite Milestones</h2>
     <div class="grid">
-      <div class="card">
-        <div class="card-title" style="font-size: 1.1rem;">MBA - Human Resource</div>
-        <p style="color: var(--muted);">Symbiosis Centre of Distance Learning, Pune.</p>
+      <div class="card" style="border-top: 4px solid var(--accent1);">
+        <span style="font-size: 2rem;">🏆</span>
+        <div class="card-title">Best Performer</div>
+        <span class="card-subtitle">Liberium Global (Zee Group)</span>
+        <p class="card-desc">Awarded for driving excellence in AI adoption and D&I hiring.</p>
       </div>
-      <div class="card">
-        <div class="card-title" style="font-size: 1.1rem;">Claude Code in Action</div>
-        <p style="color: var(--muted);">Anthropic | May 2026.</p>
+      <div class="card" style="border-top: 4px solid var(--accent1);">
+        <span style="font-size: 2rem;">🌟</span>
+        <div class="card-title">Best Performer</div>
+        <span class="card-subtitle">Aaideology</span>
+        <p class="card-desc">Recognized for hiring KPI optimization and database excellence.</p>
       </div>
-      <div class="card">
-        <div class="card-title" style="font-size: 1.1rem;">Introduction to Gen AI</div>
-        <p style="color: var(--muted);">Amazon Web Services (AWS) | April 2026.</p>
+      <div class="card" style="border-top: 4px solid var(--accent2);">
+        <span style="font-size: 2rem;">🎓</span>
+        <div class="card-title">Student of the Batch</div>
+        <span class="card-subtitle">Uttaranchal University</span>
+        <p class="card-desc">Ranked #1 student for two consecutive years (Year 1 & Year 2).</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="fade-up" style="text-align: center;">
-    <h2>Let's Connect</h2>
+  <section class="fade-up">
+    <h2>Key Projects</h2>
     <div class="card">
-      <p style="margin-bottom: 30px;">"Let's automate the future of recruitment."</p>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-        <a href="mailto:anshikakush1333@gmail.com" class="btn" style="background: transparent; border: 1px solid var(--accent1);">Email Me</a>
-        <a href="https://linkedin.com/in/anshika-kush-b8b0b3215" target="_blank" class="btn">LinkedIn</a>
+      <span class="tag">AI Implementation</span>
+      <div class="card-title">Recruitment Automation Workflow</div>
+      <p class="card-desc">Integrated Claude & Gemini into the sourcing workflow, reducing job description and reporting time from 45 minutes to 5 minutes per role.</p>
+    </div>
+  </section>
+
+  <section class="fade-up">
+    <h2>Certifications</h2>
+    <div class="grid">
+      <div class="card"><span class="tag">Anthropic</span><div class="card-title" style="font-size:1.1rem;">Claude Code in Action</div></div>
+      <div class="card"><span class="tag">AWS</span><div class="card-title" style="font-size:1.1rem;">Gen AI: Art of Possible</div></div>
+      <div class="card"><span class="tag">LinkedIn</span><div class="card-title" style="font-size:1.1rem;">AI-Powered TA</div></div>
+      <div class="card"><span class="tag">Udemy</span><div class="card-title" style="font-size:1.1rem;">Excel: Animation + AI</div></div>
+    </div>
+  </section>
+
+  <section class="fade-up">
+    <h2>Academic Background</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">2022-2024</span>
+        <div class="card-title">MBA - HR Management</div>
+        <p class="card-desc">Symbiosis Centre of Distance Learning, Pune</p>
       </div>
+      <div class="card">
+        <span class="tag">2019-2022</span>
+        <div class="card-title">BBA - HR Management</div>
+        <p class="card-desc">Uttaranchal University, Dehradun</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-up">
+    <h2>Sourcing & Platforms</h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); text-align: center;">
+      <div class="card" style="padding:20px;">LinkedIn AI</div>
+      <div class="card" style="padding:20px;">GitHub</div>
+      <div class="card" style="padding:20px;">Power BI</div>
+      <div class="card" style="padding:20px;">Naukri</div>
+    </div>
+  </section>
+
+  <section class="fade-up" style="text-align: center;">
+    <h2>Beyond Work</h2>
+    <div class="hobby-grid">
+      <span>📸</span><span>🎮</span><span>✈️</span><span>📚</span><span>🏋️</span>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-up" style="text-align: center; border-bottom: none;">
+    <h2 style="justify-content: center;">Let's Connect</h2>
+    <div class="card">
+      <p style="margin-bottom: 30px;">Open to discussing the future of AI-driven recruitment.</p>
+      <a href="mailto:anshikakush1333@gmail.com" class="btn">Email Me</a>
+      <a href="https://linkedin.com/in/anshika-kush-b8b0b3215" target="_blank" class="btn" style="background:var(--accent2); color:#000; margin-left: 15px;">LinkedIn</a>
     </div>
   </section>
 
 </div>
 
-<footer>
-  BUILT WITH AI & PASSION • ANSHIKA KUSH • © 2026
+<footer style="text-align: center; padding: 40px; color: var(--muted); font-size: 0.8rem; letter-spacing: 2px;">
+  ANSHIKA KUSH • © 2026 • BUILT WITH AI
 </footer>
 
 <script>
@@ -261,6 +212,5 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
