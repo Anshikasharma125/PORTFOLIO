@@ -1,183 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshika Kush | AI-Powered TA Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #050505;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --accent-primary: #ff3366;
-            --accent-secondary: #00f2ff;
-            --text-main: #ffffff;
-            --text-dim: #b0b0b0;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Anshika Kush — Professional Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #050505;
+    --card: #13131a;
+    --card2: #1a1a26;
+    --border: rgba(255,255,255,0.07);
+    --accent1: #ff3366; /* Neon Pink/Red */
+    --accent2: #00f2ff; /* Cyber Blue */
+    --text: #f0eeff;
+    --muted: #888899;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            font-family: 'DM Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
+  /* UTILS */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        /* Hero Section matches video intro */
-        header {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%);
-        }
+  /* HERO matches video intro */
+  header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%);
+  }
+  .status-badge {
+    background: rgba(0, 242, 255, 0.1);
+    color: var(--accent2);
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid var(--accent2);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 12vw, 6.5rem);
+    line-height: 0.85;
+    background: linear-gradient(to right, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero-tag { font-size: 1.2rem; letter-spacing: 4px; color: var(--muted); font-weight: 500; }
 
-        .hero-title {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 0.9;
-            margin: 0;
-            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-        }
+  /* SECTIONS */
+  section { padding: 100px 0; }
+  h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 50px; display: flex; align-items: center; }
+  h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(to right, var(--accent1), transparent); margin-left: 20px; }
 
-        .tagline {
-            font-size: 1.1rem;
-            color: var(--text-dim);
-            margin-top: 25px;
-            letter-spacing: 4px;
-            font-weight: 500;
-        }
+  /* CARDS */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 24px;
+    position: relative;
+    transition: 0.4s;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-10px); border-color: var(--accent1); background: var(--card2); }
+  
+  .card-tag { color: var(--accent1); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px; display: block; }
+  .card-title { font-size: 1.5rem; font-weight: 700; color: var(--accent2); margin-bottom: 10px; }
+  .card-subtitle { font-size: 1.1rem; font-weight: 500; margin-bottom: 15px; display: block; }
+  .card ul { padding-left: 20px; color: var(--muted); font-size: 0.95rem; }
+  .card li { margin-bottom: 10px; }
 
-        .status-badge {
-            background: rgba(0, 242, 255, 0.1);
-            color: var(--accent-secondary);
-            padding: 8px 20px;
-            border-radius: 30px;
-            border: 1px solid var(--accent-secondary);
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+  /* SKILL BARS */
+  .skill-item { margin-bottom: 25px; }
+  .skill-label { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 600; }
+  .bar-bg { background: rgba(255,255,255,0.05); height: 10px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); }
+  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent1), var(--accent2)); border-radius: 20px; transition: width 1.5s ease-in-out; }
 
-        /* Container & Grid Layouts */
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        
-        h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-        }
+  /* BUTTONS */
+  .btn {
+    padding: 16px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    background: var(--accent1);
+    color: white;
+    display: inline-block;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  .btn:hover { box-shadow: 0 0 30px rgba(255, 51, 102, 0.4); transform: scale(1.05); }
 
-        h2::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, var(--accent-primary), transparent);
-            margin-left: 20px;
-        }
-
-        /* Experience & Award Cards */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            padding: 35px;
-            border-radius: 24px;
-            margin-bottom: 30px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-primary);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .job-title { font-size: 1.4rem; font-weight: 700; color: var(--accent-secondary); }
-        .company { color: var(--text-main); font-weight: 600; margin: 8px 0; font-size: 1.1rem; }
-        .date { color: var(--accent-primary); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; }
-
-        /* Skill Progress Bars from video */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .skill-item { margin-bottom: 20px; }
-        .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; }
-        .progress-bg { background: rgba(255,255,255,0.05); height: 10px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-        .progress-fill { height: 100%; background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary)); border-radius: 10px; transition: width 1s ease-in-out; }
-
-        .btn {
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            background: var(--accent-primary);
-            color: white;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .btn:hover { 
-            box-shadow: 0 0 30px rgba(255, 51, 102, 0.5);
-            transform: scale(1.05);
-        }
-
-        .achievement-icon { font-size: 2rem; margin-bottom: 15px; display: block; }
-    </style>
+  footer { text-align: center; padding: 60px; border-top: 1px solid var(--border); color: var(--muted); letter-spacing: 2px; font-size: 0.8rem; }
+</style>
 </head>
 <body>
 
 <header>
-    <div class="status-badge">● Open to Opportunities</div>
-    <div class="hero-title">Anshika<br>Kush</div>
-    <div class="tagline">AI RECRUITER • TALENT ANALYST • AUTOMATION EXPERT</div>
-    <div style="margin-top: 40px;">
-        <a href="mailto:anshikakush1333@gmail.com" class="btn">Get In Touch</a>
-    </div>
+  <div class="status-badge">● Open to New Opportunities</div>
+  <h1 class="fade-up">Anshika<br>Kush</h1>
+  <p class="hero-tag fade-up">AI RECRUITER • TALENT ANALYST • AUTOMATION EXPERT</p>
+  <a href="#contact" class="btn fade-up">Let's Connect</a>
 </header>
 
 <div class="container">
-    
-    <section>
-        <div class="skills-grid" style="text-align: center; margin-bottom: 80px;">
-            <div class="card">
-                <div class="job-title" style="font-size: 2.5rem;">4+</div>
-                <div class="company">Years Experience</div>
-            </div>
-            <div class="card">
-                <div class="job-title" style="font-size: 2.5rem;">60%</div>
-                <div class="company">AI Efficiency Gain</div>
-            </div>
-            <div class="card">
-                <div class="job-title" style="font-size: 2.5rem;">10+</div>
-                <div class="company">Vendors Managed</div>
-            </div>
-        </div>
-    </section>
+  
+  <section class="fade-up">
+    <h2>The Quick Picture</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="card-tag">Experience</span>
+        <div class="card-title">4+ Years</div>
+        <p style="color: var(--muted);">Specialized in IT Lateral Hiring & Talent Analytics.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">AI Impact</span>
+        <div class="card-title">60% Reduction</div>
+        <p style="color: var(--muted);">Manual effort saved in reporting & workflow automation.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">Scale</span>
+        <div class="card-title">8-10 Monthly</div>
+        <p style="color: var(--muted);">Consistent position closures across niche tech domains.</p>
+      </div>
+    </div>
+  </section>
 
-    <section>
-        <h2>Elite Milestones</h2>
-        <div class="skills-grid">
-            <div class="card" style="border-top: 4px solid var(--accent-primary);">
-                <span class="achievement-icon">🏆</span>
-                <div class="job-title" style="font-size: 1.1rem;">Best Performer Award</div>
-                <div class="company">Liberium Global (Zee Group)</div>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">Recognized for driving AI adoption & D&I hiring excellence.</p>
-            </div>
-            <div class="card" style="border-top: 4px solid var(--accent-primary);">
-                <span class="achievement-icon">🌟</span>
-                <div class="job-title" style="font-size: 1.1rem;">Best Performer Award</div>
-                <div class="company">Aaideology</div>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">Awarded for KPI optimization and database excellence.</p>
-            </div>
-            <div class="card" style="border-top: 4px solid var(--accent-secondary);">
-                <span class="achievement-icon">🎓</span>
-                <div class="
+  <section class="fade-up">
+    <h2>Elite Milestones</h2>
+    <div class="grid">
+      <div class="card" style="border-top: 4px solid var(--accent1);">
+        <span style="font-size: 2rem;">🏆</span>
+        <div class="card-title">Best Performer Award</div>
+        <span class="card-subtitle">Liberium Global (Zee Group)</span>
+        <p style="color: var(--muted);">Recognized for driving AI adoption and D&I hiring excellence across media verticals.</p>
+      </div>
+      <div class="card" style="border-top: 4px solid var(--accent1);">
+        <span style="font-size: 2rem;">🌟</span>
+        <div class="card-title">Best Performer Award</div>
+        <span class="card-subtitle">Aaideology</span>
+        <p style="color: var(--muted);">Awarded for database management and hiring KPI optimization excellence.</p>
+      </div>
+      <div class="card" style="border-top: 4px solid var(--accent2);">
+        <span style="font-size: 2rem;">🎓</span>
+        <div class="card-title">Student of the Batch</div>
+        <span class="card-subtitle">Uttaranchal University</span>
+        <p style="color: var(--muted);">Ranked #1 student for two consecutive years (Year 1 & 2).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-up" id="experience">
+    <h2>Professional Journey</h2>
+    <div class="card" style="margin-bottom: 30px;">
+      <span class="card-tag">Feb 2026 — Present</span>
+      <div class="card-title">Recruitment Specialist - IT Lateral Hiring</div>
+      <span class="card-subtitle">Agitss (IT Organization)</span>
+      <ul>
+        <li>Manages full-cycle recruitment for niche tech: Java, Python, Cloud (AWS/Azure), DevOps, and SAP.</li>
+        <li>Designed MIS dashboards tracking 10+ recruitment KPIs like offer-to-join ratio and TAT.</li>
+        <li>Automated weekly reports using Claude & Excel Macros, reducing generation time by 60%.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="card-tag">Oct 2023 — Feb 2026</span>
+      <div class="card-title">Recruitment Specialist - Media & IT</div>
+      <span class="card-subtitle">Liberium Global (Zee Group)</span>
+      <ul>
+        <li>Led end-to-end recruitment for 50+ roles across digital content production and corporate functions.</li>
+        <li>Championed Diversity & Inclusion (D&I) initiatives ensuring diverse leadership slates.</li>
+        <li>Utilized Google Gemini and Claude to automate recurring reports and summarize large datasets.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="fade-up">
+    <h2>Technical Arsenal</h2>
+    <div class="grid">
+      <div class="skill-column">
+        <div class="skill-item">
+          <div class="skill-label"><span>AI Prompt Engineering (Claude/Gemini)</span><span>98%</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 98%;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Advanced Excel (Macros/Power Query)</span><span>95%</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
+        </div>
+      </div>
+      <div class="skill-column">
+        <div class="skill-item">
+          <div class="skill-label"><span>IT Sourcing (Java/Cloud/DevOps)</span><span>90%</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Diversity & Inclusion Hiring</span><span>88%</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 88%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-up">
+    <h2>Learning & Credentials</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-title" style="font-size: 1.1rem;">MBA - Human Resource</div>
+        <p style="color: var(--muted);">Symbiosis Centre of Distance Learning, Pune.</p>
+      </div>
+      <div class="card">
+        <div class="card-title" style="font-size: 1.1rem;">Claude Code in Action</div>
+        <p style="color: var(--muted);">Anthropic | May 2026.</p>
+      </div>
+      <div class="card">
+        <div class="card-title" style="font-size: 1.1rem;">Introduction to Gen AI</div>
+        <p style="color: var(--muted);">Amazon Web Services (AWS) | April 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-up" style="text-align: center;">
+    <h2>Let's Connect</h2>
+    <div class="card">
+      <p style="margin-bottom: 30px;">"Let's automate the future of recruitment."</p>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <a href="mailto:anshikakush1333@gmail.com" class="btn" style="background: transparent; border: 1px solid var(--accent1);">Email Me</a>
+        <a href="https://linkedin.com/in/anshika-kush-b8b0b3215" target="_blank" class="btn">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  BUILT WITH AI & PASSION • ANSHIKA KUSH • © 2026
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
